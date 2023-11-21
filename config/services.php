@@ -14,10 +14,15 @@ return [
     |
     */
 
+    'asana' => [
+        'access_token' => env('ASANA_PERSONAL_ACCESS_TOKEN'),
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+        'scheme' => 'https',
     ],
 
     'postmark' => [
