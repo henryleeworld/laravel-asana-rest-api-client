@@ -1,4 +1,4 @@
-# Laravel 10 Asana 具象狀態傳輸應用程式介面用戶端
+# Laravel 11 Asana 具象狀態傳輸應用程式介面用戶端
 
 引入 asana 的 asana 套件來擴增在 Asana 上管理待辦事項，可以與團隊一起建立和分享，利用簡單使用的工具、創新的功能和好看的界面設計，提供專案和任務管理的解決方案。
 
@@ -16,14 +16,18 @@ $ composer install
 ```sh
 $ php artisan key:generate
 ```
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
+```sh
+$ php artisan migrate
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
-- 你可以經由 `/asana/show/` 來進行專案管理。
+- 你可以經由 `/api/v1/asana` 來進行專案資訊取得。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/7KOxI1c.png)
+![](https://i.imgur.com/QxKs2Dv.png)
 > 專案如同頂層容器，新增專案來幫助追蹤所需資訊
 
-![](https://i.imgur.com/He5va0N.png)
+![](https://i.imgur.com/41W8JJ0.png)
 > 進入 Asana 線上共同工作的管理軟體進行工作的協作與管理

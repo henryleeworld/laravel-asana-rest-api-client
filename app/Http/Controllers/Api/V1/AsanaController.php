@@ -1,10 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Controller;
 use Asana\Client;
 
-class AsanaClientController extends Controller
+/**
+ * @group Auth endpoints
+ */
+class AsanaController extends Controller
 {
     /**
      * The client repository instance.
@@ -29,9 +33,11 @@ class AsanaClientController extends Controller
     public function show()
     {
         $me = $this->client->users->getUser("me");
-        echo '使用者名稱：' . $me->name . PHP_EOL;
         $workspaceGid = $me->workspaces[0]->gid;
         $project = $this->client->projects->createProjectForWorkspace($workspaceGid, ['name' => __('Project')]);
-        echo "建立專案的識別編號：" . $project->gid . PHP_EOL;
+        return response()->json([
+            'name' => $me->name,
+            'project_id' => $project->gid,
+        ]);
     }
 }
