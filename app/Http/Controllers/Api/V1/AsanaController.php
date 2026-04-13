@@ -5,9 +5,6 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use Asana\Client;
 
-/**
- * @group Auth endpoints
- */
 class AsanaController extends Controller
 {
     /**
@@ -17,8 +14,6 @@ class AsanaController extends Controller
 
     /**
      * Instantiate a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -26,9 +21,7 @@ class AsanaController extends Controller
     }
 
     /**
-     * Show.
-     *
-     * @return void
+     * Display the specified resource.
      */
     public function show()
     {
